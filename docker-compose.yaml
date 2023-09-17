@@ -1,0 +1,22 @@
+version: '3'
+
+services: 
+  control:
+    build: .
+    container_name: pc_diego
+    command: ["tail", "-f", "/dev/null"]
+    hostname: pc_diego
+    volumes: 
+      - .:/root/ansible
+
+  pc_cleusa:
+    build: .
+    container_name: pc_cleusa
+    command: ["tail", "-f", "/dev/null"]
+    hostname: pc_cleusa
+
+  pc_tobias:
+    build: .
+    container_name: pc_tobias
+    command: ["tail", "-f", "/dev/null"]
+    hostname: pc_tobias
